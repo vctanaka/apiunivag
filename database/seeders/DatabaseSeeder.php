@@ -14,12 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
 
         $this->call([
             TokenSeeder::class,
@@ -29,7 +23,11 @@ class DatabaseSeeder extends Seeder
             PeriodoSeeder::class,
             AulaDiaSeeder::class,
             AlunoFaltaSeeder::class,
-
+            AlunoNotaSeeder::class,
+            AlunoAtrasoPagamentoSeeder::class,
+            FeedbackConteudoSeeder::class,
+            FeedbackFaculdadeSeeder::class,
+            FeedbackProfessorSeeder::class,
         ]);
 
 
