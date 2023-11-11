@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\WhatsAppController;
+use App\Mail\NotificacaoMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
+
+
+    Mail::to('victorctanaka@gmail.com')->send(new NotificacaoMail());
+    // Mail::to('univagtest@gmail.com')->send(new NotificacaoMail());
+
+
     return view('welcome');
 });
+
+
+Route::get('/send-whatsapp-message/{number}/{message}', [WhatsAppController::class, 'sendMessage']);
